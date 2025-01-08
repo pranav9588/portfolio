@@ -1,0 +1,41 @@
+name: my_portfolio_web
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  june: ^1.0.0+1
+  flutter_svg_provider: ^1.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+  #   - images/a_dot_ham.jpeg
+
+  fonts:
+    - family: Jura
+      fonts:
+        - asset: assets/font/Jura-Regular.ttf
+        - asset: assets/font/Jura-Light.ttf
+        - asset: assets/font/Jura-Bold.ttf
+        - asset: assets/font/Jura-SemiBold.ttf
+        - asset: assets/font/Jura-Medium.ttf
