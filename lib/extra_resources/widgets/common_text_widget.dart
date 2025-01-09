@@ -22,7 +22,7 @@ class CommonTextWidget extends StatelessWidget {
       style: TextStyle(
         fontFamily: Constants.fontFamily,
         fontSize: fontSize,
-        color: color ?? ColorManager.black,
+        color: color ?? ColorManager.white,
         fontWeight: fontWeight,
       ),
     );

@@ -34,12 +34,12 @@ class _HomeViewState extends State<HomeView> {
     return JuneBuilder(
       () => PhoneDimensions(),
       builder: (phoneDimensions) => Scaffold(
-        backgroundColor: ColorManager.section1,
+        backgroundColor: ColorManager.black,
         appBar: (phoneDimensions.mobileWidth >= Constants.maxMobileWidth)
             ? AppBar(
-                backgroundColor: ColorManager.section1,
+                backgroundColor: ColorManager.black,
                 title: const Padding(
-                  padding: EdgeInsets.only(top: 20.0, right: 10),
+                  padding: EdgeInsets.only(top: 20.0, right: 10, bottom: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: ColorManager.section1),
+          colorScheme: ColorScheme.fromSeed(seedColor: ColorManager.black),
           useMaterial3: true,
         ),
         home: const HomeView());
