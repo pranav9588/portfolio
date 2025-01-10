@@ -12,4 +12,10 @@ class Constants {
   static const String linkedinPng = "assets/images/linkedin.svg";
   static const String mediumPng = "assets/images/medium.svg";
   static const String xPng = "assets/images/twitter.svg";
+
+  /// launching links
+ static const String linkedinProfileLink = "https://www.linkedin.com/in/pranav-patel-7b06a4188";
+ static const String mediumProfileLink = "https://medium.com/@pranav.patel2001";
+ static const String githubProfileLink = "https://github.com/pranav9588";
+ static const String xProfileLink = "https://x.com/pranav9588?s=21";
 }

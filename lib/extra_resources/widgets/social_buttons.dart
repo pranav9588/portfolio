@@ -1,40 +1,39 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:my_portfolio_web/app/color_manager.dart';
 import 'package:my_portfolio_web/app/constants.dart';
-import 'package:my_portfolio_web/extra_resources/widgets/common_text_widget.dart';
+import 'package:my_portfolio_web/app/utils.dart';
 
 class SocialButtons extends StatelessWidget {
   final String img;
-  final String title;
   final double? width;
   final double? height;
-  final Function function;
-  const SocialButtons({super.key, required this.img, required this.title, this.width, this.height, required this.function});
+  final VoidCallback function;
+
+  const SocialButtons({
+    super.key,
+    required this.img,
+    this.width,
+    this.height,
+    required this.function,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-
-      },
+      onTap: function,
       child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
         ),
-        child: Row(
+        child: Column(
           children: [
             SizedBox(
-              width: width ?? 45,
-              height: height ?? 45,
-              child: Image(
-                image: Svg(img),
-              ),
+              width: width ?? 40,
+              height: height ?? 40,
+              child: Image(image: Svg(img)),
             ),
-            SizedBox(width: 20,),
-            // CommonTextWidget(text: title, fontSize: 18,)
           ],
         ),
       ),
@@ -48,44 +47,40 @@ class SocialCluster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorManager.black.withOpacity(.9),
+      color: ColorManager.black,
       child: Row(
-        children: [
-          SocialButtons(
-            function: (){},
-            title: "Medium",
-            img: Constants.mediumPng,
-            width: 50,
-            height: 50,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SocialButtons(
-            function: (){},
-            title: "LinkedIn",
-            img: Constants.linkedinPng,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SocialButtons(
-            function: (){},
-            title: "X",
-            img: Constants.xPng,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          SocialButtons(
-            function: (){},
-            width: 40,
-            height: 40,
-            title: "Git",
-            img: Constants.githubSvg,
-          ),
-        ],
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: _buildSocialButtons(spaced: true),
       ),
     );
+  }
+
+  List<Widget> _buildSocialButtons({bool spaced = false}) {
+    return [
+      SocialButtons(
+        function: () => Utils.launch(Constants.mediumProfileLink),
+        img: Constants.mediumPng,
+        width: 45,
+        height: 45,
+      ),
+      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
+      SocialButtons(
+        function: () => Utils.launch(Constants.linkedinProfileLink),
+        img: Constants.linkedinPng,
+      ),
+      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
+      SocialButtons(
+        function: () => Utils.launch(Constants.xProfileLink),
+        img: Constants.xPng,
+      ),
+      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
+      SocialButtons(
+        function: () => Utils.launch(Constants.githubProfileLink),
+        img: Constants.githubSvg,
+        width: 32,
+        height: 32,
+      ),
+    ];
   }
 }
