@@ -58,18 +58,18 @@ class SocialCluster extends StatelessWidget {
 
   List<Widget> _buildSocialButtons({bool spaced = false}) {
     return [
-      Padding(
-        padding: const EdgeInsets.only(bottom: .0),
-        child: SocialButtons(
-          function: () => Utils.launch(Constants.mediumProfileLink),
-          img: Constants.mediumPng,
-          width: 48,
-          height: 48,
-        ),
-      ),
+      // Padding(
+      //   padding: const EdgeInsets.only(top: 10),
+      //   child: SocialButtons(
+      //     function: () => Utils.launch(Constants.mediumProfileLink),
+      //     img: Constants.mediumPng,
+      //     width: 50,
+      //     height: 50,
+      //   ),
+      // ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       Padding(
-        padding: const EdgeInsets.only(top: 4.0),
+        padding: const EdgeInsets.only(top: 16.0),
         child: SocialButtons(
           width: 35,
           height: 35,
@@ -79,17 +79,17 @@ class SocialCluster extends StatelessWidget {
       ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       Padding(
-        padding: const EdgeInsets.only(top: 4.0),
+        padding: const EdgeInsets.only(bottom: 14.0),
         child: SocialButtons(
-          width: 35,
-          height: 35,
+          width: 70,
+          height: 70,
           function: () => Utils.launch(Constants.emailSvg),
           img: Constants.emailSvg,
         ),
       ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       Padding(
-        padding: const EdgeInsets.only(top: 4.0),
+        padding: const EdgeInsets.only(top: 16.0),
         child: SocialButtons(
           width: 35,
           height: 35,
@@ -97,10 +97,15 @@ class SocialCluster extends StatelessWidget {
           img: Constants.xPng,
         ),
       ),
-      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
-      SocialButtons(
-        function: () => Utils.launch(Constants.githubProfileLink),
-        img: Constants.githubSvg,
+      if (spaced) const SizedBox(width: 16) else const SizedBox(width: 20),
+      Padding(
+        padding: const EdgeInsets.only(top: 14.0),
+        child: SocialButtons(
+          width: 38,
+          height: 38,
+          function: () => Utils.launch(Constants.githubProfileLink),
+          img: Constants.githubSvg,
+        ),
       ),
     ];
   }

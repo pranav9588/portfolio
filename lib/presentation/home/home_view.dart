@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_web/app/color_manager.dart';
 import 'package:my_portfolio_web/app/constants.dart';
+import 'package:my_portfolio_web/extra_resources/widgets/carousel_slider.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/top_title_buttons.dart';
 import 'package:my_portfolio_web/presentation/profile/profile_view.dart';
 
@@ -16,7 +17,7 @@ class HomeView extends StatelessWidget {
         return Scaffold(
           backgroundColor: ColorManager.black,
           appBar: AppBar(
-            toolbarHeight: 100,
+            toolbarHeight: isDesktop ? 100 : 30,
             backgroundColor: ColorManager.black,
             title: isDesktop
                 ? PreferredSize(
@@ -32,38 +33,38 @@ class HomeView extends StatelessWidget {
                             height: 150,
                           ),
                         ),
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            TopTitleButtons(
+                            const TopTitleButtons(
                               text: "About",
                               height: 50,
                               width: 90,
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                             ),
-                            TopTitleButtons(
+                            const TopTitleButtons(
                               text: "Experience",
                               height: 50,
                               width: 140,
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                             ),
-                            TopTitleButtons(
+                            const TopTitleButtons(
                               text: "Projects",
                               height: 50,
                               width: 110,
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                             ),
-                            TopTitleButtons(
+                            const TopTitleButtons(
                               text: "Resume",
                               height: 50,
                               width: 110,
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
                             ),
-                            TopTitleButtons(
+                            const TopTitleButtons(
                               text: "Blogs",
                               height: 50,
                               width: 85,
@@ -75,6 +76,7 @@ class HomeView extends StatelessWidget {
                               height: 50,
                               width: 100,
                               fontSize: 20,
+                              textColor: ColorManager.orange,
                               fontWeight: FontWeight.w800,
                             ),
                           ],
@@ -88,9 +90,10 @@ class HomeView extends StatelessWidget {
               ? null // Hide the drawer in desktop mode
               : _buildDrawer(context), // Show the drawer in mobile mode
           body: ListView(
-            children: const [
-              SizedBox(height: 10),
-              ProfileView(),
+            children: [
+              const SizedBox(height: 10),
+              SkillsCarousel(),
+              const ProfileView(),
             ],
           ),
         );
