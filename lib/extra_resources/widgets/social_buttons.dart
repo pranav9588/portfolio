@@ -58,28 +58,49 @@ class SocialCluster extends StatelessWidget {
 
   List<Widget> _buildSocialButtons({bool spaced = false}) {
     return [
-      SocialButtons(
-        function: () => Utils.launch(Constants.mediumProfileLink),
-        img: Constants.mediumPng,
-        width: 45,
-        height: 45,
+      Padding(
+        padding: const EdgeInsets.only(bottom: .0),
+        child: SocialButtons(
+          function: () => Utils.launch(Constants.mediumProfileLink),
+          img: Constants.mediumPng,
+          width: 48,
+          height: 48,
+        ),
       ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
-      SocialButtons(
-        function: () => Utils.launch(Constants.linkedinProfileLink),
-        img: Constants.linkedinPng,
+      Padding(
+        padding: const EdgeInsets.only(top: 4.0),
+        child: SocialButtons(
+          width: 35,
+          height: 35,
+          function: () => Utils.launch(Constants.linkedinProfileLink),
+          img: Constants.linkedinPng,
+        ),
       ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
-      SocialButtons(
-        function: () => Utils.launch(Constants.xProfileLink),
-        img: Constants.xPng,
+      Padding(
+        padding: const EdgeInsets.only(top: 4.0),
+        child: SocialButtons(
+          width: 35,
+          height: 35,
+          function: () => Utils.launch(Constants.emailSvg),
+          img: Constants.emailSvg,
+        ),
+      ),
+      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
+      Padding(
+        padding: const EdgeInsets.only(top: 4.0),
+        child: SocialButtons(
+          width: 35,
+          height: 35,
+          function: () => Utils.launch(Constants.xProfileLink),
+          img: Constants.xPng,
+        ),
       ),
       if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       SocialButtons(
         function: () => Utils.launch(Constants.githubProfileLink),
         img: Constants.githubSvg,
-        width: 32,
-        height: 32,
       ),
     ];
   }

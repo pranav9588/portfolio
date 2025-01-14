@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_web/app/color_manager.dart';
 import 'package:my_portfolio_web/app/constants.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/top_title_buttons.dart';
+import 'package:my_portfolio_web/presentation/profile/profile_view.dart';
 
-import '../profile/profile_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
         return Scaffold(
           backgroundColor: ColorManager.black,
           appBar: AppBar(
+            toolbarHeight: 100,
             backgroundColor: ColorManager.black,
             title: isDesktop
                 ? PreferredSize(

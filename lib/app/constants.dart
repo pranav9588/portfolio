@@ -11,7 +11,7 @@ class Constants {
   static const String githubSvg = "assets/images/github.svg";
   static const String linkedinPng = "assets/images/linkedin.svg";
   static const String mediumPng = "assets/images/medium.svg";
-  static const String xPng = "assets/images/twitter.svg";
+  static const String xPng = "assets/images/x.svg";
 
   /// launching links
  static const String linkedinProfileLink = "https://www.linkedin.com/in/pranav-patel-7b06a4188";

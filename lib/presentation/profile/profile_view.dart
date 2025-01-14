@@ -42,9 +42,6 @@ class _ProfileViewState extends State<ProfileView> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /*SizedBox(
-                    height: 50,
-                  ),*/
                   CommonTextWidget(
                     text: "Hi I'm,",
                     fontWeight: FontWeight.bold,
