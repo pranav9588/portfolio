@@ -2,6 +2,7 @@ import 'dart:html' as html;
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_portfolio_web/app/color_manager.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/common_text_widget.dart';
 
 class AnimatedDownloadButton extends StatefulWidget {
@@ -55,7 +56,7 @@ class _AnimatedDownloadButtonState extends State<AnimatedDownloadButton> {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.orange,
+          color: ColorManager.orange,
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(12.0),
@@ -92,20 +93,20 @@ class _AnimatedDownloadButtonState extends State<AnimatedDownloadButton> {
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               child: _isDownloading
-                  ? const SizedBox(
-                key: ValueKey("spinner"),
+                  ? SizedBox(
+                key: const ValueKey("spinner"),
                 height: 24,
                 width: 24,
                 child: CircularProgressIndicator(
                   strokeWidth: 2.0,
-                  color: Colors.orange,
+                  color: ColorManager.orange,
                 ),
               )
                   : Icon(
                 _isDownloaded ? Icons.check : Icons.download,
                 key: ValueKey<String>(
                     _isDownloaded ? "check" : "download"),
-                color: Colors.orange,
+                color: ColorManager.orange,
                 size: 24,
               ),
             ),

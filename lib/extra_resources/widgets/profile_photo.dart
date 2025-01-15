@@ -9,7 +9,7 @@ class ProfilePhoto extends StatelessWidget {
     return Image.asset(
       "assets/images/tmp.jpg",
       width: 600,
-      height: 600,
+      height: 500,
     );
   }
 }

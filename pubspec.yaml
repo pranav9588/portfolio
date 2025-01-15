@@ -19,6 +19,7 @@ dependencies:
   http: ^1.2.2
   lottie:
   carousel_slider: ^5.0.0
+  flutter_animate: ^4.5.2
 
 dev_dependencies:
   flutter_test:

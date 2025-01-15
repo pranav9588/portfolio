@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_web/app/color_manager.dart';
 import 'package:my_portfolio_web/app/constants.dart';
@@ -8,6 +9,7 @@ import 'package:my_portfolio_web/extra_resources/widgets/common_text_widget.dart
 import 'package:my_portfolio_web/extra_resources/widgets/download_button.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/profile_photo.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/social_buttons.dart';
+import 'package:typewritertext/typewritertext.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -34,48 +36,54 @@ class _ProfileViewState extends State<ProfileView> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 90,
-                  ),
-                  CommonTextWidget(
-                    text: "Hi I'm,",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                  // SizedBox(height: 12,),
-                  CommonTextWidget(
-                    text: "Pranav Patel",
-                    fontWeight: FontWeight.w800,
-                    fontSize: 38,
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  CommonTextWidget(
-                    text: "Mobile Application Developer",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 32,
-                    color: ColorManager.orange,
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  SocialCluster(),
-                  AnimatedDownloadButton(),
-                ],
-              ),
-              ProfilePhoto(),
-            ],
+          SizedBox(
+            height: 90,
+          ),
+          CommonTextWidget(
+            text: "Hi I'm,",
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          )
+              .animate()
+              .fadeIn(duration: 600.ms)
+              .then(delay: 200.ms) // baseline=800ms
+              .slide(),
+          // SizedBox(height: 12,),
+          CommonTextWidget(
+            text: "Pranav Patel",
+            fontWeight: FontWeight.w800,
+            fontSize: 42,
+          )
+              .animate()
+              .fadeIn(duration: 600.ms)
+              .then(delay: 500.ms) // baseline=800ms
+              .slide(),
+          SizedBox(
+            height: 12,
+          ),
+          CommonTextWidget(
+            text: "Mobile Application Developer",
+            fontWeight: FontWeight.w900,
+            fontSize: 38,
+            color: ColorManager.orange,
+          )
+              .animate()
+              .fadeIn(duration: 600.ms)
+              .then(delay: 800.ms) // baseline=800ms
+              .slide(),
+          SizedBox(
+            height: 38,
+          ),
+          SocialCluster(),
+          SizedBox(
+            height: 18,
+          ),
+          AnimatedDownloadButton(),
+          SizedBox(
+            height: 45,
           ),
           Center(
             child: Lottie.asset(

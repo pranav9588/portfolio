@@ -1,3 +1,6 @@
+import 'package:animated_background/animated_background.dart';
+import 'package:my_portfolio_web/app/color_manager.dart';
+
 class Constants {
   ///font family
   static const String fontFamily = "Jura";

@@ -47,16 +47,17 @@ class SocialCluster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80,
       color: ColorManager.black,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: _buildSocialButtons(spaced: true),
+        children: _buildSocialButtons(),
       ),
     );
   }
 
-  List<Widget> _buildSocialButtons({bool spaced = false}) {
+  List<Widget> _buildSocialButtons() {
     return [
       // Padding(
       //   padding: const EdgeInsets.only(top: 10),
@@ -67,42 +68,35 @@ class SocialCluster extends StatelessWidget {
       //     height: 50,
       //   ),
       // ),
-      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       Padding(
         padding: const EdgeInsets.only(top: 16.0),
         child: SocialButtons(
-          width: 35,
-          height: 35,
+          width: 30,
+          height: 30,
           function: () => Utils.launch(Constants.linkedinProfileLink),
           img: Constants.linkedinPng,
         ),
       ),
-      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
-      Padding(
-        padding: const EdgeInsets.only(bottom: 14.0),
-        child: SocialButtons(
-          width: 70,
-          height: 70,
-          function: () => Utils.launch(Constants.emailSvg),
-          img: Constants.emailSvg,
-        ),
+      SocialButtons(
+        width: 64,
+        height: 64,
+        function: () => Utils.launch(Constants.emailSvg),
+        img: Constants.emailSvg,
       ),
-      if (spaced) const SizedBox(height: 16) else const SizedBox(width: 16),
       Padding(
         padding: const EdgeInsets.only(top: 16.0),
         child: SocialButtons(
-          width: 35,
-          height: 35,
+          width: 32,
+          height: 32,
           function: () => Utils.launch(Constants.xProfileLink),
           img: Constants.xPng,
         ),
       ),
-      if (spaced) const SizedBox(width: 16) else const SizedBox(width: 20),
       Padding(
         padding: const EdgeInsets.only(top: 14.0),
         child: SocialButtons(
-          width: 38,
-          height: 38,
+          width: 35,
+          height: 35,
           function: () => Utils.launch(Constants.githubProfileLink),
           img: Constants.githubSvg,
         ),
