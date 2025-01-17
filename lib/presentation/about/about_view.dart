@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/common_text_widget.dart';
+import 'package:my_portfolio_web/extra_resources/widgets/github_widget.dart';
+import 'package:my_portfolio_web/extra_resources/widgets/medium_widget.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({super.key});
@@ -31,11 +33,7 @@ class AboutView extends StatelessWidget {
               CommonTextWidget(text: "About Me", fontSize: 38, fontWeight: FontWeight.w900,),
             ],
           ),
-          Row(
-            children: [
-
-            ],
-          )
+         MediumWidget(),
         ],
       ),
     );

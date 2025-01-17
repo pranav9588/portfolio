@@ -4,6 +4,8 @@ import 'package:my_portfolio_web/app/constants.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/top_title_buttons.dart';
 import 'package:my_portfolio_web/presentation/profile/profile_view.dart';
 
+import '../about/about_view.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -74,9 +76,9 @@ class HomeView extends StatelessWidget {
               : _buildDrawer(context), // Show the drawer in mobile mode
           body: ListView(
             children: const [
-              // AboutView(),
-              const SizedBox(height: 10),
-              const ProfileView(),
+              AboutView(),
+              // const SizedBox(height: 10),
+              // const ProfileView(),
               // const SizedBox(height: 20),
               // SkillsCarousel(),
             ],

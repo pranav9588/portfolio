@@ -9,7 +9,6 @@ import 'package:my_portfolio_web/extra_resources/widgets/common_text_widget.dart
 import 'package:my_portfolio_web/extra_resources/widgets/download_button.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/profile_photo.dart';
 import 'package:my_portfolio_web/extra_resources/widgets/social_buttons.dart';
-import 'package:typewritertext/typewritertext.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
